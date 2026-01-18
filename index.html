@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inruilwaarde Fietsen</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <meta name="theme-color" content="#0078D7">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <h1>Inruilwaarde-calculator</h1>
+    <button id="installBtn" hidden>Installeer app</button>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Invoer</h2>
+      <div class="grid">
+        <label>Type fiets
+          <select id="typeSelect"></select>
+        </label>
+        <label>Merk
+          <select id="brandSelect"></select>
+        </label>
+        <label>Staat
+          <select id="stateSelect"></select>
+        </label>
+        <label id="accuStateWrap">Accustaat
+          <select id="accuStateSelect"></select>
+        </label>
+        <label>Heeft accu?
+          <select id="hasAccuSelect">
+            <option value="auto" selected>Automatisch (per type)</option>
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select>
+        </label>
+        <label>Leeftijd (0–15 jaar)
+          <input id="ageInput" type="number" min="0" max="15" value="5" />
+        </label>
+        <label>Nieuwprijs / Aanschafprijs (€)
+          <input id="priceInput" type="number" min="0" step="1" placeholder="Laat leeg voor referentieprijs" />
+        </label>
+        <div class="hint" id="refPriceHint"></div>
+      </div>
+      <button id="calcBtn">Bereken inruilwaarde</button>
+    </section>
+
+    <section class="card" id="resultCard" hidden>
+      <h2>Resultaat</h2>
+      <div class="result-line"><span>Inruilwaarde</span><strong><span id="resultValue">€ 0</span></strong></div>
+      <details>
+        <summary>Toelichting en factoren</summary>
+        <ul>
+          <li>Leeftijdsfactor: <span id="factorAge"></span></li>
+          <li>Conditiefactor: <span id="factorState"></span></li>
+          <li>Accufactor: <span id="factorAccu"></span></li>
+          <li>Merkfactor: <span id="factorBrand"></span></li>
+        </ul>
+      </details>
+      <div class="actions">
+        <button id="printOfferBtn">Maak offerte (print/pdf)</button>
+      </div>
+    </section>
+
+    <section class="card print" id="offerCard">
+      <h2>Offerte – Inruilvoorstel</h2>
+      <div class="offer-grid">
+        <label>Naam Klant: <input id="offerName" placeholder="Naam klant"></label>
+        <div class="kv">
+          <div>Type fiets:</div><div id="offerType"></div>
+          <div>Merk:</div><div id="offerBrand"></div>
+          <div>Staat:</div><div id="offerState"></div>
+          <div>Leeftijd:</div><div id="offerAge"></div>
+        </div>
+        <div class="offer-total">Inruilprijs: <strong id="offerTotal">€ 0</strong></div>
+        <p class="small">
+          Deze inruilwaarde is tot stand gekomen op basis van type fiets, leeftijd en algemene staat.
+          Dit voorstel is indicatief en onder voorbehoud van fysieke inspectie.
+        </p>
+        <div class="kv">
+          <div>Datum:</div><div id="offerDate"></div>
+        </div>
+        <div class="signatures">
+          <div>Handtekening klant: __________________________</div>
+          <div>Handtekening dealer: __________________________</div>
+        </div>
+        <div class="actions no-print"><button onclick="window.print()">Print / Exporteer PDF</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> Inruilwaarde Fietsen</small>
+  </footer>
+
+  <script src="./app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
+  </script>
+</body>
+</html>

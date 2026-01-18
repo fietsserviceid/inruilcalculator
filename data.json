@@ -1,0 +1,238 @@
+{
+  "types": [
+    {
+      "type": "Ebike",
+      "has_accu_default": true,
+      "ref_price": 2700.0
+    },
+    {
+      "type": "Stadsfiets",
+      "has_accu_default": false,
+      "ref_price": 800.0
+    },
+    {
+      "type": "Hybride",
+      "has_accu_default": false,
+      "ref_price": 1200.0
+    },
+    {
+      "type": "Racefiets",
+      "has_accu_default": false,
+      "ref_price": 2000.0
+    },
+    {
+      "type": "Kinderfiets",
+      "has_accu_default": false,
+      "ref_price": 350.0
+    },
+    {
+      "type": "Gravelfiets",
+      "has_accu_default": false,
+      "ref_price": 1800.0
+    },
+    {
+      "type": "ATB",
+      "has_accu_default": false,
+      "ref_price": 1200.0
+    },
+    {
+      "type": "Bakfiets",
+      "has_accu_default": true,
+      "ref_price": 4500.0
+    },
+    {
+      "type": "Speedpedelec",
+      "has_accu_default": true,
+      "ref_price": 6000.0
+    }
+  ],
+  "cond_factors": {
+    "Nieuwstaat": 1.0,
+    "Goed": 0.9,
+    "Redelijk": 0.8,
+    "Slecht": 0.6
+  },
+  "accu_state_factors": {
+    "Nieuwstaat": 1.0,
+    "Goed": 0.8,
+    "Redelijk": 0.5,
+    "Slecht": 0.4,
+    "Defect/Geen accu": 0.01
+  },
+  "restwaarde": {
+    "zonderaccu": {
+      "0": 0.75,
+      "1": 0.65,
+      "2": 0.55,
+      "3": 0.47,
+      "4": 0.4,
+      "5": 0.34,
+      "6": 0.29,
+      "7": 0.25,
+      "8": 0.22,
+      "9": 0.2,
+      "10": 0.18,
+      "11": 0.16,
+      "12": 0.14,
+      "13": 0.12,
+      "14": 0.11,
+      "15": 0.1
+    },
+    "metaccu": {
+      "0": 0.7,
+      "1": 0.55,
+      "2": 0.45,
+      "3": 0.37,
+      "4": 0.31,
+      "5": 0.26,
+      "6": 0.22,
+      "7": 0.18,
+      "8": 0.15,
+      "9": 0.13,
+      "10": 0.12,
+      "11": 0.11,
+      "12": 0.1,
+      "13": 0.9,
+      "14": 0.8,
+      "15": 0.7
+    }
+  },
+  "brands": {
+    "Ebike": {
+      "Gazelle": 1.0,
+      "Koga": 1.0,
+      "Trek": 1.0,
+      "Specialized": 1.0,
+      "Riese & Müller": 1.0,
+      "Sparta": 0.95,
+      "Batavus": 0.95,
+      "Giant": 0.95,
+      "Cube": 0.95,
+      "Scott": 0.95,
+      "Cannondale": 0.95,
+      "Kalkhoff": 0.95,
+      "Wilier": 0.95,
+      "Cortina": 0.9,
+      "QWIC": 0.9,
+      "Pegasus": 0.85,
+      "Advanced Ebike": 0.85,
+      "Huyser": 0.85,
+      "Stella": 0.85,
+      "Amslod": 0.8,
+      "Vyber": 0.8,
+      "Starly Bikes": 0.8,
+      "Reany": 0.8,
+      "Aldo": 0.8,
+      "BSP": 0.8,
+      "Vogue": 0.75,
+      "Overig": 0.75,
+      "Brinkers": 0.75
+    },
+    "Stadsfiets": {
+      "Gazelle": 1.0,
+      "Batavus": 1.0,
+      "Koga": 1.0,
+      "Sparta": 0.95,
+      "Union": 0.95,
+      "Aldo": 0.8,
+      "Cortina": 0.9,
+      "Alpina": 0.85,
+      "BSP": 0.8,
+      "Avalon": 0.8,
+      "Popal": 0.75,
+      "Vogue": 0.75,
+      "Overig": 0.75,
+      "test": 0.55
+    },
+    "Hybride": {
+      "Trek": 1.0,
+      "Giant": 1.0,
+      "Koga": 1.0,
+      "Cannondale": 0.95,
+      "Cube": 0.95,
+      "Scott": 0.95,
+      "Merida": 0.95,
+      "Stevens": 0.95,
+      "Wilier": 0.95,
+      "Orbea": 0.95,
+      "Batavus": 0.9,
+      "Aldo": 0.8,
+      "Overig": 0.85
+    },
+    "Racefiets": {
+      "Specialized": 1.0,
+      "Trek": 1.0,
+      "Pinarello": 1.0,
+      "Cervélo": 1.0,
+      "Bianchi": 1.0,
+      "Colnago": 1.0,
+      "Wilier": 1.0,
+      "Giant": 0.95,
+      "Cannondale": 0.95,
+      "Canyon": 0.95,
+      "Scott": 0.95,
+      "Cube": 0.9,
+      "Sensa": 0.85,
+      "Overig": 0.8
+    },
+    "Kinderfiets": {
+      "Puky": 1.0,
+      "Loekie": 0.95,
+      "Alpina": 0.9,
+      "Volare": 0.85,
+      "Aldo": 0.8,
+      "Popal": 0.8,
+      "Overig": 0.75
+    },
+    "Gravelfiets": {
+      "Trek": 1.0,
+      "Specialized": 1.0,
+      "Cannondale": 0.95,
+      "Giant": 0.95,
+      "Canyon": 0.95,
+      "Scott": 0.95,
+      "Ridley": 0.95,
+      "Orbea": 0.95,
+      "Wilier": 0.95,
+      "Cube": 0.9,
+      "Merida": 0.9,
+      "Overig": 0.85
+    },
+    "ATB": {
+      "Trek": 1.0,
+      "Specialized": 1.0,
+      "Cannondale": 0.95,
+      "Giant": 0.95,
+      "Cube": 0.95,
+      "Scott": 0.95,
+      "Merida": 0.95,
+      "Orbea": 0.95,
+      "Canyon": 0.95,
+      "BMC": 0.95,
+      "Wilier": 0.95,
+      "Overig": 0.85
+    },
+    "Bakfiets": {
+      "Urban Arrow": 1.0,
+      "Lovens": 1.0,
+      "Gazelle": 0.95,
+      "Bakfiets.nl": 0.95,
+      "Carqon": 0.95,
+      "Cago": 0.95,
+      "Babboe": 0.85,
+      "Cangoo": 0.8,
+      "Overig": 0.8
+    },
+    "Speedpedelec": {
+      "Stromer": 1.0,
+      "Riese & Müller": 1.0,
+      "Trek": 1.0,
+      "Gazelle": 0.95,
+      "Klever": 0.95,
+      "Giant": 0.95,
+      "QWIC": 0.9,
+      "Sparta": 0.9,
+      "Overig": 0.85
+    }
+  }
+}
