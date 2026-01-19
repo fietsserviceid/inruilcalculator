@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'fiets-inruil-cache-v5';
+const CACHE_NAME = 'fiets-inruil-cache-v6';
 const ASSETS = [
   '/',
   './index.html',
