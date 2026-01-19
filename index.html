@@ -10,13 +10,35 @@
 </head>
 <body>
   
-<!-- Toegangscode: eenvoudige prompt -->
 <script>
   // ====== INSTELLING ======
-  const ACCESS_CODE = "+*#Fsid+*#"; // <-- Verander dit!
+  const ACCESS_CODE = "+*#Fsid+*#";   // jouw wachtwoord
 
-  // Optioneel: onthouden voor sessie (true = onthouden tot tab sluit)
-  const REMEMBER_IN_SESSION = true;
+  // ====== LOGICA ======
+  try {
+    // Check of wachtwoord in localStorage staat (blijft staan na sluiten/app-installatie)
+    if (localStorage.getItem("pwa_access_ok") === "1") {
+      // Toegang reeds verleend
+    } else {
+      const input = prompt("Voer wachtwoord in:");
+      if (input !== ACCESS_CODE) {
+        document.documentElement.innerHTML = `
+          <!doctype html><html lang="nl"><head><meta charset="utf-8"><title>Toegang geweigerd</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+          <body style="font-family: system-ui, Segoe UI, Roboto; padding: 24px;">
+            <h2>Toegang geweigerd</h2>
+            <p>Onjuist wachtwoord. Vernieuw de pagina om het opnieuw te proberen.</p>
+          </body></html>`;
+        throw new Error("Blocked by password gate");
+      }
+
+      // Bewaar toegang permanent
+      localStorage.setItem("pwa_access_ok", "1");
+    }
+  } catch (e) {
+    // stopt bewust
+  }
+</script>
 
   // ====== LOGICA ======
   try {
